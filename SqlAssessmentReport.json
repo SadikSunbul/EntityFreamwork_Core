@@ -1,0 +1,363 @@
+{
+  "Status": "Completed",
+  "AssessmentId": "3b362093-c92b-4e82-bd87-e06a2e0182b6",
+  "Servers": [
+    {
+      "ServerAssessments": [
+        {
+          "ServerName": "4ce2c2b393c1",
+          "DatabaseName": "",
+          "DatabaseRestoreFails": false,
+          "FeatureId": "TraceFlags",
+          "IssueCategory": "Warning",
+          "ImpactedObjects": [
+            {
+              "Name": "822",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "833",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "835",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "851",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "3425",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "5504",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8052",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8076",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8904",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "9038",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            }
+          ],
+          "MoreInformation": "Resolving Transact-SQL differences during migration to SQL Database",
+          "RuleMetadata": {
+            "Description": "Trace flags are used to temporarily set specific server characteristics or to switch off a particular behavior.  Trace flags are frequently used to diagnose performance issues or to debug stored procedures or complex computer systems. Azure SQL Database does not support trace flags.",
+            "Id": "Azure SQL Database does not support trace flags",
+            "HelpLink": "https://docs.microsoft.com/en-us/azure/azure-sql/database/transact-sql-tsql-differences-sql-server#transact-sql-syntax-not-supported-in-azure-sql-database",
+            "Probes": [],
+            "Enabled": true,
+            "Level": 2,
+            "Tags": [],
+            "Message": "Review impacted objects section to see all trace flags that are not supported in Azure SQL Database and evaluate if they can be removed. Alternatively, migrate to Azure SQL Managed Instance which supports limited number of global trace flags or SQL Server on Azure Virtual Machine.",
+            "Parameters": {}
+          },
+          "RuleScope": "Server",
+          "AppliesToMigrationTargetPlatform": "AzureSqlDatabase",
+          "Timestamp": "2023-02-05T07:56:18.493256+03:00"
+        },
+        {
+          "ServerName": "4ce2c2b393c1",
+          "DatabaseName": "",
+          "DatabaseRestoreFails": false,
+          "FeatureId": "TraceFlags",
+          "IssueCategory": "Warning",
+          "ImpactedObjects": [
+            {
+              "Name": "822",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "833",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "835",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "851",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "3425",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "5504",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8052",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8076",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "8904",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            },
+            {
+              "Name": "9038",
+              "ObjectType": "TraceFlag",
+              "ImpactDetail": "",
+              "DatabaseObjectType": "TraceFlag"
+            }
+          ],
+          "MoreInformation": "Trace Flags",
+          "RuleMetadata": {
+            "Description": "Azure SQL Managed Instance supports only limited number of global trace flags. Session trace flags aren’t supported.",
+            "Id": "Trace flags not supported in Azure SQL Managed Instance were found",
+            "HelpLink": "https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql?view=sql-server-ver15#trace-flags",
+            "Probes": [],
+            "Enabled": true,
+            "Level": 2,
+            "Tags": [],
+            "Message": "Review impacted objects section to see all trace flags that are not supported in Azure SQL Managed Instance and evaluate if they can be removed. Alternatively, migrate to SQL Server on Azure Virtual Machine.",
+            "Parameters": {}
+          },
+          "RuleScope": "Server",
+          "AppliesToMigrationTargetPlatform": "AzureSqlManagedInstance",
+          "Timestamp": "2023-02-05T07:56:18.494186+03:00"
+        }
+      ],
+      "TargetReadinesses": {
+        "AzureSqlDatabase": {
+          "DatabasesListReadyForMigration": [],
+          "DatabasesListNoSelectionForMigration": [],
+          "DatabasesListWithUnhandledErrors": [],
+          "AppliesToMigrationTargetPlatform": "AzureSqlDatabase",
+          "NumberOfDatabasesReadyForMigration": 0,
+          "NumberOfServerBlockerIssues": 0,
+          "NumberOfNonOnlineDatabases": 0,
+          "TotalNumberOfDatabases": 1,
+          "Errors": [],
+          "RecommendationStatus": "NotReady",
+          "ServiceTiers": []
+        },
+        "AzureSqlManagedInstance": {
+          "DatabasesListReadyForMigration": [
+            "Trendyol"
+          ],
+          "DatabasesListNoSelectionForMigration": [],
+          "DatabasesListWithUnhandledErrors": [],
+          "AppliesToMigrationTargetPlatform": "AzureSqlManagedInstance",
+          "NumberOfDatabasesReadyForMigration": 1,
+          "NumberOfServerBlockerIssues": 0,
+          "NumberOfNonOnlineDatabases": 0,
+          "TotalNumberOfDatabases": 1,
+          "Errors": [],
+          "RecommendationStatus": "Ready",
+          "ServiceTiers": [
+            "GeneralPurpose",
+            "BusinessCritical"
+          ]
+        }
+      },
+      "Properties": {
+        "ServerName": "4ce2c2b393c1",
+        "ProductName": "SQL Server 2019",
+        "FQDN": "sadk-air",
+        "InstallId": "",
+        "ServerVersion": "15.0.2000.1565",
+        "ServerEdition": "Azure SQL Edge Developer (64-bit)",
+        "ServerHostPlatform": "Linux",
+        "ServerLevel": "RTM",
+        "ServerDefaultBackupPath": "/var/opt/mssql/data",
+        "ServerDefaultDataPath": "/var/opt/mssql/data/",
+        "ServerDefaultLogPath": "/var/opt/mssql/data/",
+        "ServerCoreCount": 4,
+        "ServerCollation": "SQL_Latin1_General_CP1_CI_AS",
+        "ServerVisibleOnlineCoreCount": 4,
+        "IsHadrEnabled": false,
+        "IsBufferPoolExtensionEnabled": false,
+        "IsClustered": false,
+        "IsIntegratedSecurityOnly": false,
+        "IsPolyBaseInstalled": false,
+        "IsServerCaseSensitive": false,
+        "LogicalCpuCount": 4,
+        "HyperthreadRatio": 4,
+        "PhysicalCpuCount": 1.0,
+        "SqlStartTime": "2023-02-05T04:09:00.77",
+        "MaxServerMemoryInUse": 2147483647.0,
+        "NumberOfUserDatabases": 12,
+        "SumOfUserDatabasesSize": 640.0,
+        "TempDbSize": 16.0,
+        "NumOfLogins": 12,
+        "TotalNumOfUserDefinedObjects": 0,
+        "ServerPermissionsLevel": "MemberSysadmin",
+        "LinkedServers": [],
+        "AgentJobs": [],
+        "IsRds": false
+      },
+      "Errors": [],
+      "Status": "Completed",
+      "XeventsFilesFolderPath": "",
+      "Databases": [
+        {
+          "DatabaseAssessments": [
+            {
+              "ServerName": "4ce2c2b393c1",
+              "DatabaseName": "Trendyol",
+              "DatabaseRestoreFails": false,
+              "FeatureId": "ServiceBroker",
+              "IssueCategory": "Issue",
+              "ImpactedObjects": [
+                {
+                  "Name": "Trendyol",
+                  "ObjectType": "Database",
+                  "ImpactDetail": "",
+                  "DatabaseObjectType": "Database"
+                }
+              ],
+              "MoreInformation": "",
+              "RuleMetadata": {
+                "Description": "SQL Server Service Broker provides native support for messaging and queuing applications in the SQL Server Database Engine. Service Broker feature is not supported in Azure SQL Database.",
+                "Id": "Service Broker feature is not supported in Azure SQL Database",
+                "HelpLink": "",
+                "Probes": [],
+                "Enabled": true,
+                "Level": 2,
+                "Tags": [],
+                "Message": "Service Broker feature is not supported in Azure SQL Database. Consider migrating to Azure SQL Managed Instance that supports service broker within the same instance. Alternatively, migrate to SQL Server on Azure Virtual Machine.",
+                "Parameters": {}
+              },
+              "RuleScope": "Database",
+              "AppliesToMigrationTargetPlatform": "AzureSqlDatabase",
+              "Timestamp": "2023-02-05T07:56:18.495669+03:00"
+            }
+          ],
+          "TargetReadinesses": {
+            "AzureSqlDatabase": {
+              "AppliesToMigrationTargetPlatform": "AzureSqlDatabase",
+              "State": "Online",
+              "RecommendationStatus": "NotReady",
+              "NoSelectionForMigration": false,
+              "NumOfBlockerIssues": 1,
+              "Errors": [],
+              "ServiceTiers": [
+                "GeneralPurpose",
+                "BusinessCritical",
+                "Hyperscale"
+              ]
+            },
+            "AzureSqlManagedInstance": {
+              "AppliesToMigrationTargetPlatform": "AzureSqlManagedInstance",
+              "State": "Online",
+              "RecommendationStatus": "Ready",
+              "NoSelectionForMigration": false,
+              "NumOfBlockerIssues": 0,
+              "Errors": [],
+              "ServiceTiers": [
+                "GeneralPurpose",
+                "BusinessCritical"
+              ]
+            }
+          },
+          "Properties": {
+            "Id": "5e4243cc-554f-4a24-a4a6-613a7e2287b1",
+            "ServerDatabaseId": "15",
+            "Name": "Trendyol",
+            "CompatibilityLevel": "CompatLevel150",
+            "Collation": "SQL_Latin1_General_CP1_CI_AS",
+            "DatabaseState": "Online",
+            "SizeMB": 16.0,
+            "DatabaseFileLocationDrive": "\u0000",
+            "DatabaseFiles": [
+              {
+                "LogicalName": "Trendyol",
+                "PhysicalFullName": "/var/opt/mssql/data/Trendyol.mdf",
+                "FileType": "Rows",
+                "SizeMB": 8.0,
+                "IsMemoryOptimizedDataOptionEnabled": false,
+                "FilegroupName": "PRIMARY",
+                "FilegroupType": "FG",
+                "HasErrors": false,
+                "ReportedErrors": {},
+                "ReportedExceptions": []
+              },
+              {
+                "LogicalName": "Trendyol_log",
+                "PhysicalFullName": "/var/opt/mssql/data/Trendyol_log.ldf",
+                "FileType": "Log",
+                "SizeMB": 8.0,
+                "IsMemoryOptimizedDataOptionEnabled": false,
+                "FilegroupType": "NotApplicable",
+                "HasErrors": false,
+                "ReportedErrors": {},
+                "ReportedExceptions": []
+              }
+            ],
+            "IsServiceBrokerEnabled": true,
+            "IsCdcEnabled": false,
+            "IsReplicationEnabled": false,
+            "NumOfUserDefinedObjects": 0,
+            "TSqlScriptAnalysisTimeElapse": "00:00:00",
+            "IsFullRecoveryModelSelected": true,
+            "IsRdsAdmin": false,
+            "IsTdeEnabled": false
+          },
+          "Errors": [],
+          "Status": "Completed",
+          "FeatureDiscoveryTimeElapse": "00:00:00.1583808"
+        }
+      ]
+    }
+  ],
+  "Errors": [],
+  "StartedOn": "2023-02-05T07:56:17.43855+03:00",
+  "EndedOn": "2023-02-05T07:56:18.515671+03:00",
+  "XeventsFilesFolderPath": ""
+}

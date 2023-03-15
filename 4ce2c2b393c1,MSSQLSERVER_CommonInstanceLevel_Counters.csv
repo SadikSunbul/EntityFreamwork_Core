@@ -1,0 +1,2 @@
+ServerName,Edition,HyperthreadRatio,IsClustered,IsHadrEnabled,LogicalCpuCount,MaxServerMemoryInUse,NumberCoresUsed,NumberOfUserDatabases,PhysicalCpuCount,ProductVersion,SqlStartTime,SumOfUserDatabasesSize,TempDbSize,NumOfLogins,TimeDataCollected
+4ce2c2b393c1,Azure SQL Edge Developer (64-bit),4,False,False,4,2147483647,4,12,1,15.0.2000.1565,2023-02-05 04:09:00,640,16,12,2023-02-05 09:43:47

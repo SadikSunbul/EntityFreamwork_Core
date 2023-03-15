@@ -1,0 +1,25 @@
+ServerName,DatabaseName,LogicalName,PhysicalFullName,FileType,SizeMB,IsMemoryOptimizedDataOptionEnabled,TimeDataCollected
+4ce2c2b393c1,AdventureWorks2019,AdventureWorks2017,/var/opt/mssql/data/AdventureWorks2019.mdf,Rows,264,False,2023-02-05 09:43:47
+4ce2c2b393c1,AdventureWorks2019,AdventureWorks2017_log,/var/opt/mssql/data/AdventureWorks2019_log.ldf,Log,72,False,2023-02-05 09:43:47
+4ce2c2b393c1,BikeStores,BikeStores,/var/opt/mssql/data/BikeStores.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,BikeStores,BikeStores_log,/var/opt/mssql/data/BikeStores_log.ldf,Log,72,False,2023-02-05 09:43:47
+4ce2c2b393c1,Category,Category,/var/opt/mssql/data/Category.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Category,Category_log,/var/opt/mssql/data/Category_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,İlişkiselveritablosu,İlişkiselveritablosu,/var/opt/mssql/data/İlişkiselveritablosu.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,İlişkiselveritablosu,İlişkiselveritablosu_log,/var/opt/mssql/data/İlişkiselveritablosu_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,MovieDb,MovieDb,/var/opt/mssql/data/MovieDb.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,MovieDb,MovieDb_log,/var/opt/mssql/data/MovieDb_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,odev,odev,/var/opt/mssql/data/odev.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,odev,odev_log,/var/opt/mssql/data/odev_log.ldf,Log,72,False,2023-02-05 09:43:47
+4ce2c2b393c1,Qwe,Qwe,/var/opt/mssql/data/Qwe.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Qwe,Qwe_log,/var/opt/mssql/data/Qwe_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Sadık,Sadık,/var/opt/mssql/data/Sadık.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Sadık,Sadık_log,/var/opt/mssql/data/Sadık_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Sadık_Turan_Sql,Sadık_Turan_Sql,/var/opt/mssql/data/Sadık_Turan_Sql.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Sadık_Turan_Sql,Sadık_Turan_Sql_log,/var/opt/mssql/data/Sadık_Turan_Sql_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Trendyol,Trendyol,/var/opt/mssql/data/Trendyol.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,Trendyol,Trendyol_log,/var/opt/mssql/data/Trendyol_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,UdemySadik,UdemySadik,/var/opt/mssql/data/UdemySadik.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,UdemySadik,UdemySadik_log,/var/opt/mssql/data/UdemySadik_log.ldf,Log,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,VIA,VIA,/var/opt/mssql/data/VIA.mdf,Rows,8,False,2023-02-05 09:43:47
+4ce2c2b393c1,VIA,VIA_log,/var/opt/mssql/data/VIA_log.ldf,Log,8,False,2023-02-05 09:43:47
