@@ -317,7 +317,7 @@ class ApplicationDbContext : DbContext
         //modelBuilder.Entity<Person>().HasKey(p => new { p.Id, p.Id2 });
         #endregion
         #region HasDefaultSchema
-        //modelBuilder.HasDefaultSchema("ahmet");
+        //modelBuilder.HasDefaultSchema("ahmet");  --sema adını degıstırır 
         #endregion
         #region Property
         #region HasDefaultValue

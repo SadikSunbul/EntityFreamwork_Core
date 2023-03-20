@@ -30,7 +30,7 @@ ApplicationDbContext context = new();
 #endregion
 
 #region 1. Durum | Esas tablodaki veriye bağımlı veriyi değiştirme
-/*
+
 Person? person = await context.Persons 
     .Include(p => p.Address)//burada adres bılgılerını buradan elde ettık --> burada vermıs  oldugumuz navıgatıon property ıle arkada olusturacagı select sorgusunda  joın ıslemı yapar --> burası nulll olabılır o yuzden ? koyduk
     .FirstOrDefaultAsync(p => p.Id == 1); //person ıd sı 1 olanı elde ettık 
@@ -42,7 +42,7 @@ person.Address = new Address() //yenı bır nesne olusturduk
 };
 
 await context.SaveChangesAsync(); //kaydettık burada
-*/
+
 #endregion
 #region 2. Durum | Bağımlı verinin ilişkisel olduğu ana veriyi güncelleme
 /*
@@ -147,11 +147,11 @@ await context.SaveChangesAsync();
 #region 1. Örnek
 
 
-//Book? book = await context.Books.FindAsync(1);
-//Author? author = await context.Authors.FindAsync(3);
-//book.Authors.Add(author);
+Book? book = await context.Books.FindAsync(1);
+Author? author = await context.Authors.FindAsync(3);
+book.Authors.Add(author);
 
-//await context.SaveChangesAsync();
+await context.SaveChangesAsync();
 
 
 #endregion

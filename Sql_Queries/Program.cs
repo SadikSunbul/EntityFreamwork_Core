@@ -37,9 +37,9 @@ var persons4 = await context.Persons.FromSql($"SELECT * FROM Persons Where Perso
 //Burada sorguya geçirilen personId değişkeni arkaplanda bir DbParameter türüne dönüştürülerek o şekilde sorguya dahil edilmektedir.
 #endregion
 #region Örnek 2
-//int personId = 3;
-//var persons = await context.Persons.FromSql($"EXECUTE dbo.sp_GetAllPersons {personId}")
-//    .ToListAsync();
+int personId = 3;
+var persons = await context.Persons.FromSql($"EXECUTE dbo.sp_GetAllPersons {personId}")
+    .ToListAsync();
 #endregion
 #region Örnek 3
 SqlParameter personId5 = new("PersonId", "3");

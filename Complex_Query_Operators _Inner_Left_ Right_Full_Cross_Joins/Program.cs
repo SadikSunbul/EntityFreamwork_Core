@@ -124,7 +124,7 @@ var query = from person in context.Persons
             {
                 person.Name,
                 Count = personOrders.Count(),
-                personOrders
+                personOrders   //ordera ulasamazsın cunku onu gurupladık
             };
 var datas = await query.ToListAsync();
 #endregion
@@ -135,8 +135,8 @@ var datas = await query.ToListAsync();
 #region Left Join
 var query = from person in context.Persons
             join order in context.Orders
-                on person.PersonId equals order.PersonId into personOrders
-            from order in personOrders.DefaultIfEmpty()
+                on person.PersonId equals order.PersonId into personOrders  //personların orderlarını gurupladık burada
+            from order in personOrders.DefaultIfEmpty()  //left joın yapmak ıcın normal degerı varsa getır dedık yoksa da default vea null ver demıs olduk burada
             select new
             {
                 person.Name,
@@ -150,6 +150,7 @@ var datas = await query.ToListAsync();
 #endregion
 
 #region Right Join
+//olusturulmaz aslında sadece yerlerını degıstırıcez ustek ıle efcore desteklemez right joini 
 var query = from order in context.Orders
             join person in context.Persons
                 on order.PersonId equals person.PersonId into orderPersons
@@ -164,6 +165,7 @@ var datas = await query.ToListAsync();
 #endregion
 
 #region Full Join
+//ful joın de yapılmaz sen kendın mantıgını kurmalısın 
 var leftQuery = from person in context.Persons
                 join order in context.Orders
                     on person.PersonId equals order.PersonId into personOrders
@@ -172,7 +174,7 @@ var leftQuery = from person in context.Persons
                 {
                     person.Name,
                     order.Description
-                };
+                }; 
 
 
 var rightQuery = from order in context.Orders
@@ -185,60 +187,66 @@ var rightQuery = from order in context.Orders
                      order.Description
                  };
 
-var fullJoin = leftQuery.Union(rightQuery);
+//uste sag ve sol ları aldık
+
+var fullJoin = leftQuery.Union(rightQuery); //ıkısını bırlestırdık
 
 var datas = await fullJoin.ToListAsync();
 #endregion
 
 #region Cross Join
-//var query = from order in context.Orders
-//            from person in context.Persons
-//            select new
-//            {
-//                order,
-//                person
-//            };
+//Cross Join işlemi ise iki tabloyu birleştirirken iki tablo arasında tüm eşleştirmeleri listeler yani çapraz birleştirir bir diğer tabir ile kartezyen çarpımını alır
+var query = from order in context.Orders
+            from person in context.Persons
+            select new
+            {
+                order,
+                person
+            };
 
-//var datas = await query.ToListAsync();
+var datas = await query.ToListAsync();
 #endregion
 
 #region Collection Selector'da Where Kullanma Durumu
-//var query = from order in context.Orders
-//            from person in context.Persons.Where(p => p.PersonId == order.PersonId)
-//            select new
-//            {
-//                order,
-//                person
-//            };
 
-//var datas = await query.ToListAsync();
+var query = from order in context.Orders
+            from person in context.Persons.Where(p => p.PersonId == order.PersonId)
+            select new
+            {
+                order,
+                person
+            };
+
+var datas = await query.ToListAsync();
+//burayı ınner joın gıbı algılar ef core 
+
 #endregion
 
 #region Cross Apply
-//Inner Join
+//Inner Join -->Cross Apply'dan dönen sonuçları kolonları ile beraber diğer tablo içine transfer etmede kullanılır.
 
-//var query = from person in context.Persons
-//            from order in context.Orders.Select(o => person.Name)
-//            select new
-//            {
-//                person,
-//                order
-//            };
+var query = from person in context.Persons
+            from order in context.Orders.Select(o => person.Name)
+            select new
+            {
+                person,
+                order
+            };
 
-//var datas = await query.ToListAsync();
+var datas = await query.ToListAsync();
 #endregion
 
 #region Outer Apply
-//Left Join
-//var query = from person in context.Persons
-//            from order in context.Orders.Select(o => person.Name).DefaultIfEmpty()
-//            select new
-//            {
-//                person,
-//                order
-//            };
+//Left Join  -->output kümesinde sol tablodaki tüm satırlar ve bu satırların karşılık geldiği sağ tablodaki tüm satırlar bulunur.
+var query = from person in context.Persons
+            from order in context.Orders.Select(o => person.Name).DefaultIfEmpty()
+            select new
+            {
+                person,
+                order
+            };
 
-//var datas = await query.ToListAsync();
+var datas = await query.ToListAsync();
 #endregion
 #endregion
 Console.WriteLine();
