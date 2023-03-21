@@ -20,16 +20,18 @@ ApplicationDbContext context = new();
 #region CommitTransaction
 //EF Core üzerinde yapılan çalışmaların commit edilebilmesi için kullanılan bir fonksiyondur.
 //context.Database.CommitTransaction();
-
+//begınden de yapılır bu Transaction lar
 #endregion
 #region RollbackTransaction
 //EF Core üzerinde yapılan çalışmaların rollback edilebilmesi için kullanılan bir fonksiyondur.
 //context.Database.RollbackTransaction();
+//begınden de yapılır bu Transaction lar
 #endregion
 #region CanConnect
 //Verilen connection string'e karşılık bağlantı kurulabilir bir veritabanı var mı yok mu bunun bilgisini bool türde veren bir fonksiyondur.
 //bool connect = context.Database.CanConnect();
 //Console.WriteLine(connect);
+//mıgratıons olusturmazsan false doner
 #endregion
 #region EnsureCreated
 //EF Core'da tasarlanan veritabanını migration kullanmaksızın, runtime'da yani kod üzerinde veritabanı sunucusuna inşa edebilmek için kullanılan bir fonksiyondur.
@@ -103,6 +105,7 @@ ApplicationDbContext context = new();
 //context.Database.SetDbConnection();
 #endregion
 #region ProviderName Property'si
+//saglayıcı adı nı  getırır orn sql orackel vb 
 //EF Core'un kullanmış olduğu provider neyse onun bilgisini getiren bir proeprty'dir.
 //Console.WriteLine(context.Database.ProviderName);
 #endregion

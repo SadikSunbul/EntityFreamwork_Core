@@ -71,7 +71,7 @@ class ApplicationDbContext : DbContext
     public DbSet<Order> Orders { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        #region Scalar
+        #region Scalar  ---> Imza olusturuyoruz
         modelBuilder.HasDbFunction(typeof(ApplicationDbContext).GetMethod(nameof(ApplicationDbContext.GetPersonTotalOrderPrice), new[] { typeof(int) }))
             .HasName("getPersonTotalOrderPrice");
         #endregion

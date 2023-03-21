@@ -23,6 +23,11 @@ namespace Functions.Migrations
 	                    RETURN @totalPrice
                     END
                     ");
+            /*
+             Nasıl kullanılır fonksıyonlar
+            select dbo.getPersonTotalOrderPrice(10)
+            tek sartımız sema ıle cagırmak gerekır 
+             */
         }
 
         /// <inheritdoc />

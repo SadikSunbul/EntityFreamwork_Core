@@ -22,6 +22,8 @@ namespace Functions.Migrations
                 HAVING SUM(o.Price) < @totalOrderPrice
                 ORDER By OrderCount DESC
                     ");
+            //begın end yapısı yok 
+            //select * from dbo.bestSellingStaff(1000)
         }
 
         /// <inheritdoc />
