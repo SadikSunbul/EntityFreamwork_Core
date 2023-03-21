@@ -73,6 +73,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.8.Database_Property'si_ve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.9.KeylessEntityTypes", "4.9.KeylessEntityTypes\4.9.KeylessEntityTypes.csproj", "{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.0.Logging", "5.0.Logging\5.0.Logging.csproj", "{86A603F1-08D7-456D-B944-7590BA764893}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +221,10 @@ Global
 		{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A603F1-08D7-456D-B944-7590BA764893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A603F1-08D7-456D-B944-7590BA764893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A603F1-08D7-456D-B944-7590BA764893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A603F1-08D7-456D-B944-7590BA764893}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

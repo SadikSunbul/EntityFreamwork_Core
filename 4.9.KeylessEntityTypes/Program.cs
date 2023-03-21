@@ -33,7 +33,7 @@ ApplicationDbContext context = new();
 //TPH olarak entity hiyerarşisinde kullanılabilir lakin diğer kalıtımsal ilişkilerde kullanılamaz!
 #endregion
 
-[Keyless]
+[Keyless]  //Hasnokey anlamına gelır key sız 
 public class PersonOrderCount
 {
     public string Name { get; set; }
