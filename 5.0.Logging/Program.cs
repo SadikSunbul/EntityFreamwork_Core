@@ -70,21 +70,20 @@ class ApplicationDbContext : DbContext
             .WithOne(o => o.Person)
             .HasForeignKey(o => o.PersonId);
     }
-    StreamWriter _log = new("logs.txt", append: true); //uygulamanın debug klasorune bunu klasoru olusturur  append: true uzerıne ekleme
+    StreamWriter _log = new("logs.txt", append: true); //uygulamanın debug klasorune bu yoksa  klasoru olusturur varsa  append: true uzerıne ekleme
     protected override async void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=localhost, 1433;Database=ApplicationDB;User ID=SA;Password=1q2w3e4r+!;TrustServerCertificate=True");
 
         //optionsBuilder.LogTo(Console.WriteLine);
         //optionsBuilder.LogTo(message => Debug.WriteLine(message));
-        optionsBuilder.LogTo(async message => await _log.WriteLineAsync(message), LogLevel.Information)
-            .EnableSensitiveDataLogging()
-            .EnableDetailedErrors();
+        optionsBuilder.LogTo(async message => await _log.WriteLineAsync(message), LogLevel.Information)  //LogLevel.Information OZELLIK SEVIYE OZELLIGI GIBI FILTRELEME YAPARIZ 
+            .EnableSensitiveDataLogging() //verılerıde loglar
+            .EnableDetailedErrors();  //haTAYI DETAYLANDIRIR
         //optionsBuilder.LogTo(message => _log.WriteLine(message));
     }
 
-    public override void Dispose() //  --->
-Elden çıkarmak
+    public override void Dispose() // Dispose --->Elden çıkarmak
     {
         base.Dispose();
         _log.Dispose(); //logu kapadık 
