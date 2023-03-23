@@ -85,6 +85,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.4.OwnedEntitiesAndTableSp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.5.TemporalTablesKullanımı", "5.5.TemporalTablesKullanımı\5.5.TemporalTablesKullanımı.csproj", "{7CCBB52F-270D-4465-923C-67D0BD3C7739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.6.DerinlemesineConnectionResiliency", "5.6.DerinlemesineConnectionResiliency\5.6.DerinlemesineConnectionResiliency.csproj", "{0FDA55C6-7BD1-454D-B6AE-D88DF0E12E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.7.DerinlemesineDataConcurrency", "5.7.DerinlemesineDataConcurrency\5.7.DerinlemesineDataConcurrency.csproj", "{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +259,14 @@ Global
 		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FDA55C6-7BD1-454D-B6AE-D88DF0E12E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDA55C6-7BD1-454D-B6AE-D88DF0E12E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDA55C6-7BD1-454D-B6AE-D88DF0E12E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDA55C6-7BD1-454D-B6AE-D88DF0E12E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
