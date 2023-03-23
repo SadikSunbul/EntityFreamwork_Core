@@ -35,6 +35,7 @@ await context.SaveChangesAsync();
 #endregion
 Console.WriteLine();
 #endregion
+
 public class Person
 {
     public int PersonId { get; set; }
@@ -50,7 +51,7 @@ public class Order
 
     public Person Person { get; set; }
 }
-public class PersonOrder
+public class PersonOrder //view için yapıldı 
 {
     public string Name { get; set; }
     public int Count { get; set; }

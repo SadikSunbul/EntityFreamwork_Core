@@ -26,6 +26,7 @@ var employees = await context.Employees
 //Eğer ki, üretilen sorguya include edilen navigatiobn property koleksionel bir propertyse işte o zaman bu property üzerinden diğer ilişkisel tabloya erişim gösterilememektedir. Böyle bir durumda koleksiyonel propertylerin türlerine erişip, o tür ile ilişkili diğer tablolarıda sorguya eklememizi sağlayan fonksiyondur.
 
 //Tekillerde bu yapıla bılır cogullarda hata olusur 
+
 var orders = await context.Orders
     .Include(o => o.Employee) //bunu yazmasakta altakını yazsak employ larıda eklıycektır 
     .Include(o => o.Employee.Region)

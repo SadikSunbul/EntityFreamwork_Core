@@ -19,11 +19,11 @@ Console.ReadLine();
 //Veritabanı seviyesindeki herhangi bir fonksiyonu EF Core/yazılım kısmında bir metoda bind etmemizi sağlayan fonksiyondur.
 #endregion
 
-//var persons = await (from person in context.Persons
-//                     where context.GetPersonTotalOrderPrice(person.PersonId) > 500
-//                     select person).ToListAsync();
+var persons = await (from person in context.Persons
+                     where context.GetPersonTotalOrderPrice(person.PersonId) > 500
+                     select person).ToListAsync();
 
-//Console.WriteLine();
+Console.WriteLine();
 
 #endregion
 
@@ -95,6 +95,7 @@ class ApplicationDbContext : DbContext
     #region Scalar Functions
     public int GetPersonTotalOrderPrice(int personId)
         => throw new Exception();
+
     #endregion
     #region Inline Functions
     public IQueryable<BestSellingStaff> BestSellingStaff(int totalOrderPrice = 10000)

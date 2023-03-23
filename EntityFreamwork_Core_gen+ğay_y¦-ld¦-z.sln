@@ -71,9 +71,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.7.Scalar_ve_Inline_Functi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.8.Database_Property'si_ve_EF_Core_İçin_İşlevsel_Fonksiyonlar", "4.8.Database_Property'si_ve_EF_Core_İçin_İşlevsel_Fonksiyonlar\4.8.Database_Property'si_ve_EF_Core_İçin_İşlevsel_Fonksiyonlar.csproj", "{6387465F-5EBD-4A81-A253-FD4E47DC2AB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.9.KeylessEntityTypes", "4.9.KeylessEntityTypes\4.9.KeylessEntityTypes.csproj", "{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.9.KeylessEntityTypes", "4.9.KeylessEntityTypes\4.9.KeylessEntityTypes.csproj", "{6FBBDDDE-5DD1-4B6C-9F6F-725F66B1D0C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.0.Logging", "5.0.Logging\5.0.Logging.csproj", "{86A603F1-08D7-456D-B944-7590BA764893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.0.Logging", "5.0.Logging\5.0.Logging.csproj", "{86A603F1-08D7-456D-B944-7590BA764893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.1.Query_Log", "5.1.Query_Log\5.1.Query_Log.csproj", "{A15128C3-1D9F-4E2A-9487-621F0DD91FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.2.QueryTag", "5.2.QueryTag\5.2.QueryTag.csproj", "{BAB1055F-32A6-446B-A866-CC2A1ED1974F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.3.Global_Query_Filters", "5.3.Global_Query_Filters\5.3.Global_Query_Filters.csproj", "{22A6C29B-0B38-4C4F-BE6A-D1179D29C50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.4.OwnedEntitiesAndTableSplitting", "5.4.OwnedEntitiesAndTableSplitting\5.4.OwnedEntitiesAndTableSplitting.csproj", "{2B902994-0C22-495E-8BA3-1773EE48A8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.5.TemporalTablesKullanımı", "5.5.TemporalTablesKullanımı\5.5.TemporalTablesKullanımı.csproj", "{7CCBB52F-270D-4465-923C-67D0BD3C7739}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -225,6 +235,26 @@ Global
 		{86A603F1-08D7-456D-B944-7590BA764893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86A603F1-08D7-456D-B944-7590BA764893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86A603F1-08D7-456D-B944-7590BA764893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A15128C3-1D9F-4E2A-9487-621F0DD91FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A15128C3-1D9F-4E2A-9487-621F0DD91FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A15128C3-1D9F-4E2A-9487-621F0DD91FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A15128C3-1D9F-4E2A-9487-621F0DD91FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB1055F-32A6-446B-A866-CC2A1ED1974F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB1055F-32A6-446B-A866-CC2A1ED1974F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB1055F-32A6-446B-A866-CC2A1ED1974F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB1055F-32A6-446B-A866-CC2A1ED1974F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A6C29B-0B38-4C4F-BE6A-D1179D29C50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A6C29B-0B38-4C4F-BE6A-D1179D29C50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A6C29B-0B38-4C4F-BE6A-D1179D29C50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A6C29B-0B38-4C4F-BE6A-D1179D29C50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B902994-0C22-495E-8BA3-1773EE48A8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B902994-0C22-495E-8BA3-1773EE48A8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B902994-0C22-495E-8BA3-1773EE48A8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B902994-0C22-495E-8BA3-1773EE48A8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCBB52F-270D-4465-923C-67D0BD3C7739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

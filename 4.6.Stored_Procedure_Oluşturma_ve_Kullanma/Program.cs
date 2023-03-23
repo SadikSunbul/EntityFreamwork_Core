@@ -93,7 +93,7 @@ class ApplicationDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         modelBuilder.Entity<PersonOrder>()
-            .HasNoKey();
+            .HasNoKey();  //pk sı olmasın dedık 
 
         modelBuilder.Entity<Person>()
             .HasMany(p => p.Orders)

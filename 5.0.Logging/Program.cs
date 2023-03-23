@@ -70,6 +70,7 @@ class ApplicationDbContext : DbContext
             .WithOne(o => o.Person)
             .HasForeignKey(o => o.PersonId);
     }
+
     StreamWriter _log = new("logs.txt", append: true); //uygulamanın debug klasorune bu yoksa  klasoru olusturur varsa  append: true uzerıne ekleme
     protected override async void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
