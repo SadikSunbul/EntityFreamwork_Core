@@ -89,7 +89,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.6.DerinlemesineConnection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.7.DerinlemesineDataConcurrency", "5.7.DerinlemesineDataConcurrency\5.7.DerinlemesineDataConcurrency.csproj", "{3EDB8D83-97B1-4AE3-823C-3A96AA941C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler", "6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler\6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler.csproj", "{01302755-B29A-4883-9E45-6F83FA2758D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler", "6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler\6.0.ValueConversionsYapılandırmasıylaVeriselDönüşümler.csproj", "{01302755-B29A-4883-9E45-6F83FA2758D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.1.Transactions", "6.1.Transactions\6.1.Transactions.csproj", "{0A0EF9BD-AD66-46CD-B2E0-BAA6A8605110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.2.In-Memory'dekiDatabase'deÇalışmak", "6.2.In-Memory'dekiDatabase'deÇalışmak\6.2.In-Memory'dekiDatabase'deÇalışmak.csproj", "{63168DFB-3BA5-4A44-900B-94F3C0E822B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -273,6 +277,14 @@ Global
 		{01302755-B29A-4883-9E45-6F83FA2758D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01302755-B29A-4883-9E45-6F83FA2758D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01302755-B29A-4883-9E45-6F83FA2758D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0EF9BD-AD66-46CD-B2E0-BAA6A8605110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0EF9BD-AD66-46CD-B2E0-BAA6A8605110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0EF9BD-AD66-46CD-B2E0-BAA6A8605110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0EF9BD-AD66-46CD-B2E0-BAA6A8605110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
