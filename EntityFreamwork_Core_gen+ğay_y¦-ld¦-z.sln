@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.1.Transactions", "6.1.Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.2.In-Memory'dekiDatabase'deÇalışmak", "6.2.In-Memory'dekiDatabase'deÇalışmak\6.2.In-Memory'dekiDatabase'deÇalışmak.csproj", "{63168DFB-3BA5-4A44-900B-94F3C0E822B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.EFCoreSelectSorgularınıGüçlendirmeTeknikleri", "6.3.EFCoreSelectSorgularınıGüçlendirmeTeknikleri\6.3.EFCoreSelectSorgularınıGüçlendirmeTeknikleri.csproj", "{9A249743-15E9-45BC-84CD-73BD45A7AD94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -285,6 +287,10 @@ Global
 		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63168DFB-3BA5-4A44-900B-94F3C0E822B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A249743-15E9-45BC-84CD-73BD45A7AD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A249743-15E9-45BC-84CD-73BD45A7AD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A249743-15E9-45BC-84CD-73BD45A7AD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A249743-15E9-45BC-84CD-73BD45A7AD94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
