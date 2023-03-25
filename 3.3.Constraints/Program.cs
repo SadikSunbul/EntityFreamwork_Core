@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 ApplicationDbContext context = new();
+/*
+ HasKey yöntemi, birincil anahtar (primary key) için kullanılırken, HasAlternateKey yöntemi, benzersiz ama birincil anahtar (primary key) olmayan bir özellik veya özellik grubu için kullanılır.
+ */
+//IsUnique yöntemi kullanılarak bu özelliğin benzersiz olması sağlanır.
 
 //burada sadece baslıklar yazıldı cunkı bu konuları oncekı derslerde ısledıgımız ıcın sadece ana baslıkları koyduk buraya 
 /*
@@ -136,3 +140,19 @@ class ApplicationDbContext : DbContext
         optionsBuilder.UseSqlServer("Server=localhost, 1433;Database=ApplicationDB;User ID=SA;Password=sıfre+!;TrustServerCertificate=True");
     }
 }
+
+
+/*
+ modelBuilder.Entity<Musteri>()
+            .HasKey(m => m.Id); // Id alanını PK olarak belirle
+
+        modelBuilder.Entity<Musteri>()
+            .HasIndex(m => m.Email)
+            .IsUnique(); // Email alanını benzersiz olarak ayarla
+
+        base.OnModelCreating(modelBuilder);
+
+Yukarıdaki kod bloğunda HasIndex metodu kullanarak Email özelliğine bir indeks ekliyoruz. IsUnique metodu ise bu indeksin benzersiz olmasını sağlıyor. Bu sayede, aynı email adresine sahip iki müşteri kaydedemeyeceğiz.
+
+HasKey metodunu kullanarak Id alanını PK olarak belirledik. Bu sayede, her kaydın benzersiz bir Id değerine sahip olacağı garanti edildi.
+ */
