@@ -36,6 +36,10 @@ await context.SaveChangesAsync();
 Console.WriteLine();
 #endregion
 
+/*
+ SQL'de, bir görünüm (view) üzerinde yapılan değişiklikler doğrudan diğer tablolara kaydedilmez. Çünkü bir görünüm, yalnızca bir sorgu sonucudur ve bir tablonun gerçek bir kopyası değildir. Bir görünümü kullanarak yapılan değişiklikler yalnızca o görünümün sonucunu etkiler, diğer tablolara etki etmez.
+ */
+
 public class Person
 {
     public int PersonId { get; set; }
