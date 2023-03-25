@@ -8,6 +8,17 @@ ApplicationDbContext context = new();
  */
 //IsUnique yöntemi kullanılarak bu özelliğin benzersiz olması sağlanır.
 
+/*
+ modelBuilder.Entity<Musteri>()
+            .HasIndex(m => m.Email)
+            .IsUnique();  //Tavsıye edılen 
+        //bunun ıle sunun arasındakı fark ne 
+        modelBuilder.Entity<Musteri>()
+            .HasIndex(i=>i.Email)
+            .HasAlternateKey(i=>i.Email)
+            ;
+ */
+
 //burada sadece baslıklar yazıldı cunkı bu konuları oncekı derslerde ısledıgımız ıcın sadece ana baslıkları koyduk buraya 
 /*
  * Alternate keys (alternatif anahtarlar) ve normal keys (standart anahtarlar) veritabanı tasarımında kullanılan iki farklı anahtar türüdür. Her iki anahtar türü de bir tablodaki her satırın benzersiz bir şekilde tanımlanmasına yardımcı olur.
