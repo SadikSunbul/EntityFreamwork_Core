@@ -44,7 +44,7 @@ await context.SaveChangesAsync();
 
 
 //SaveChanges ; insert ,update  ve delete sotgularını oluşturup bir transections eşlığınde verı tabanına gonderip execute eden fonk dur
-//eğerki luşturulan sorgulardan  herhangı bırı basarısız olursa tum ıslemler gerı alınır(rollback)
+//eğerki oluşturulan sorgulardan  herhangı bırı basarısız olursa tum ıslemler gerı alınır(rollback)
 #endregion
 
 

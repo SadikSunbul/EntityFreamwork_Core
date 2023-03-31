@@ -94,11 +94,11 @@ class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         #region OwnsOne
-        //modelBuilder.Entity<Employee>().OwnsOne(e => e.EmployeeName, builder =>
-        //{
-        //    builder.Property(e => e.Name).HasColumnName("Name"); //property ısmıne mudahalede bulunula bılır
-        //});
-        //modelBuilder.Entity<Employee>().OwnsOne(e => e.Adress);
+        modelBuilder.Entity<Employee>().OwnsOne(e => e.EmployeeName, builder =>
+        {
+            builder.Property(e => e.Name).HasColumnName("Name"); //property ısmıne mudahalede bulunula bılır
+        });
+        modelBuilder.Entity<Employee>().OwnsOne(e => e.Adress);
         #endregion
         #region OwnsMany
 

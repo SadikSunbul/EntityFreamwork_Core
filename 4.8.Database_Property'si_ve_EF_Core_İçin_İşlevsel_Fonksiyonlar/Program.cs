@@ -11,19 +11,44 @@ ApplicationDbContext context = new();
 #region Database Property'si
 //Database property'si veritabanını temsil eden ve EF Core'un bazı işlevlerinin detaylarına erişmemizi sağlayan bir propertydir.
 #endregion
-#region BeginTransaction
+#region BeginTransaction  ->İşleme Başla demek 
 //EF Core, transaction yönetimini otomatik bir şekilde kendisi gerçekleştirmektedir. Eğer ki transaction yönetimini manuel olarak anlık ele almak istiyorsak BeginTransaction fonksiyonunu kullanabiliriz.
 
 //IDbContextTransaction transaction = context.Database.BeginTransaction();
+/*
+ Arayüz IDbContextTransaction, Entity Framework Core tarafından yönetilen bir işlemi temsil eder. İşlem içinde yapılan değişiklikleri taahhüt etmek veya geri almak gibi işlemi kontrol etmek için yöntemler sağlar.
+ */
+/*
+ using var transaction = context.Database.BeginTransaction();
 
+try
+{
+    // Perform database operations here...
+
+    context.SaveChanges();
+
+    transaction.Commit();
+}
+catch (Exception)
+{
+    transaction.Rollback();
+}
+ */
+/*
+ Bu örnekte usingifade, işlemin artık ihtiyaç kalmadığında elden çıkarılmasını sağlar. Blok, tryişlem içinde gerçekleştirilen veritabanı işlemlerini içerir. Bir istisna atılırsa, Rollbackişlem içinde yapılan değişiklikleri geri almak için yöntem çağrılır. Aksi takdirde, Commitdeğişiklikleri veritabanına kaydetmek için yöntem çağrılır.
+ */
 #endregion
 #region CommitTransaction
-//EF Core üzerinde yapılan çalışmaların commit edilebilmesi için kullanılan bir fonksiyondur.
+//EF Core üzerinde yapılan çalışmaların commit->işlemek edilebilmesi için kullanılan bir fonksiyondur.
+//depolama sisteminde kalıcı değişiklikler yapma eylemini ifade eder.
+
 //context.Database.CommitTransaction();
 //begınden de yapılır bu Transaction lar
 #endregion
 #region RollbackTransaction
 //EF Core üzerinde yapılan çalışmaların rollback edilebilmesi için kullanılan bir fonksiyondur.
+//Bir işlemin parçası olarak gerçekleştirilen bir dizi veritabanı işlemini geri alma eylemini ifade eder.
+//Bir veritabanı işleminde, eklemeler, güncellemeler ve silmeler gibi çoklu veritabanı işlemleri tek bir mantıksal birim olarak yürütülür. İşlemlerden herhangi biri sırasında bir hata oluşursa, işlemin tamamı geri alınabilir, yani işlem sırasında yapılan tüm değişiklikler geri alınır ve işlem başlamadan önce veritabanı orijinal durumuna geri döner.
 //context.Database.RollbackTransaction();
 //begınden de yapılır bu Transaction lar
 #endregion
@@ -31,17 +56,20 @@ ApplicationDbContext context = new();
 //Verilen connection string'e karşılık bağlantı kurulabilir bir veritabanı var mı yok mu bunun bilgisini bool türde veren bir fonksiyondur.
 //bool connect = context.Database.CanConnect();
 //Console.WriteLine(connect);
+//Örneğin, bir kullanıcı bilgisayarından bir veritabanına erişmeye çalışabilir ve uygulama, veritabanı sunucusuyla bağlantı kurmaya çalışır. Bağlantı kurulmadan önce, uygulamanın veritabanına erişmek için gerekli kimlik bilgilerine ve izinlere sahip olup olmadığını belirlemesi gerekir. "CanConnect" işlevi, veritabanı bağlantısını test etmek ve gerekli kimlik bilgilerinin doğru olup olmadığını belirlemek için kullanılabilir.
 //mıgratıons olusturmazsan false doner
 #endregion
 #region EnsureCreated
 //EF Core'da tasarlanan veritabanını migration kullanmaksızın, runtime'da yani kod üzerinde veritabanı sunucusuna inşa edebilmek için kullanılan bir fonksiyondur.
 //context.Database.EnsureCreated();
+//ureCreatedveritabanı ve tabloları yoksa bunları oluşturan basit ve hafif bir yaklaşımdır. Veritabanının salt okunur işlemler için kullanıldığı veya veritabanının sık sık güncellenmesinin beklenmediği senaryolarda kullanılması amaçlanmıştır. EnsureCreatedveritabanı şemasındaki değişiklikleri veya veri geçişlerini işlemek için tasarlanmamıştır.
 #endregion
 #region EnsureDeleted
 //İnşa edilmiş veritabanını runtime'da silmemizi sağlayan bir fonksiyondur.
 //context.Database.EnsureDeleted();
 #endregion
 #region GenerateCreateScript
+//Komut Dosyası Oluştur
 //Context nesnesinde yapılmış olan veritabanı tasarımı her ne ise ona uygun bir SQL Script'ini string olarak veren metottur.
 //var script = context.Database.GenerateCreateScript();
 //Console.WriteLine(script);
@@ -81,6 +109,8 @@ ApplicationDbContext context = new();
 //Migration'ları programatik olarak runtime'da migrate etmek için kullanılan bir fonksiyondur.
 //context.Database.Migrate();
 //EnsureCreated fonksiyonu migration'ları kapsamamaktadır. O yüzden migraton'lar içerisinde yapılan çalışmalar ilgili fonksiyonda geçerli olmayacaktır.
+
+//Migratebekleyen tüm geçişleri veritabanına uygulayan, şemasını güncelleyen ve gerekirse verileri taşıyan daha güçlü bir yaklaşımdır. Veritabanının sık sık değişmesinin beklendiği ve uygulamanın veritabanı şemasını güncelleyebilmesi ve verileri güvenilir ve tutarlı bir şekilde taşıması gereken senaryolarda kullanılması amaçlanmıştır.
 #endregion
 #region OpenConnection
 //Veritabanı bağlantısını manuel açar.

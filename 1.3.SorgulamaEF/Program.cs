@@ -370,8 +370,7 @@ var kişiler25 = await contex.kişis.MinAsync(ı => ı.Id); //burada Id sı en k
 var kişiler26 = await contex.kişis.Distinct().ToListAsync();
 #endregion
 #region AllAsync
-//Bir sorgu netıcesındekı gelen verilerin verilen şarta uyup uymadığını kontrol etmektır. Eğerki tüm veriler şarta uyuyorsa true,
-//uymuyorsa false döndürecektir
+//Bir sorgu netıcesındekı gelen verilerin verilen şarta uyup uymadığını kontrol etmektır. Eğerki tüm veriler şarta uyuyorsa true,uymuyorsa false döndürecektir
 var m =await contex.kişis.AllAsync(i=>i.Id>2); //buarda kısılerın ıd degerlerı hepsının ıd sı 2 den buyulse true 1 tane bıle dusuk varsa yanı 1 ıd lı varsa false donucektır
 #endregion
 #region SumAsync
