@@ -215,6 +215,7 @@ class ApplicationDbContext : DbContext
             .HasOne(a => a.Person)
             .WithOne(p => p.Address)
             .HasForeignKey<Address>(a => a.Id);
+        //burada personda bır verı sılınırse adreslerdekı ılıskılı olanıda sıl dedık
 
         //default olarak cascade dır bunlar ztn
 

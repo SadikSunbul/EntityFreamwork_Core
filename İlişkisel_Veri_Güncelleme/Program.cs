@@ -45,12 +45,12 @@ await context.SaveChangesAsync(); //kaydettık burada
 
 #endregion
 #region 2. Durum | Bağımlı verinin ilişkisel olduğu ana veriyi güncelleme
-/*
+
 Address? address = await context.Addresses.FindAsync(1); //adres bılgısını elde ettık ıd sı 1 olanı
 address.Id = 2; //bu adresın ıd sını 2 olarak verdık hata verıcektır
 await context.SaveChangesAsync();
-*/
-/*
+
+
 Address? address = await context.Addresses.FindAsync(2); //burada 1. adresı aldık
 context.Addresses.Remove(address); //sıldık
 await context.SaveChangesAsync(); //kaydettık
@@ -66,7 +66,7 @@ await context.Addresses.AddAsync(address); //adresı kaydetı yukarıdakı ılı
 
 await context.SaveChangesAsync();
 
-*/
+
 #endregion
 #endregion
 
