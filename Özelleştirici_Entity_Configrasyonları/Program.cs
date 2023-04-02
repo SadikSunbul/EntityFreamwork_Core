@@ -269,6 +269,8 @@ class ApplicationDbContext : DbContext
         #region Ignore
         //modelBuilder.Entity<Person>()
         //    .Ignore(p => p.Laylaylom);
+
+
         #endregion
         #region Primary Key --> HasKey
         //modelBuilder.Entity<Person>()
@@ -386,7 +388,8 @@ class ApplicationDbContext : DbContext
         #region HasField
         //modelBuilder.Entity<Person>()
         //    .Property(p => p.Name)
-        //    .HasField(nameof(Person._name));
+        //    .HasField(nameof(Person._name))
+        //    .UsePropertyAccessMode(PropertyAccessMode.Field);
         #endregion
         #region HasNoKey  --> ilişkileri keser burası
         //modelBuilder.Entity<Example>()
