@@ -23,11 +23,11 @@ ApplicationDbContext context = new();
 
 //Normal durumlarda Enum türünde tutulan propertylerin veritabanındaki karşılıkları int olacak şekilde aktarımı gerçekleştirlimektedir. Value converter sayesinde enum türünden olan propertylerinde dönüşümlerini istediğimiz türlere sağlayarak hem ilgili kolonun türünü o türde ayarlayaiblir hem de enum üzerinden çalış sürecinde verisel dönüşümleri ilgili türde sağlayabiliriz.
 
-//var person = new Person() { Name = "Rakıf", Gender2 = Gender.Male, Gender = "M" };
-//await context.Persons.AddAsync(person);
-//await context.SaveChangesAsync();
-//var _person = await context.Persons.FindAsync(person.Id);
-//Console.WriteLine();
+var person = new Person() { Name = "Rakıf", Gender2 = Gender.Male, Gender = "M" };
+await context.Persons.AddAsync(person);
+await context.SaveChangesAsync();
+var _person = await context.Persons.FindAsync(person.Id);
+Console.WriteLine();
 
 #endregion
 #region ValueConverter Sınıfı

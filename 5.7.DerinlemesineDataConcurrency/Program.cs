@@ -93,6 +93,15 @@ class ApplicationDbContext : DbContext
 
         //modelBuilder.Entity<Person>().Property(p => p.Name).IsConcurrencyToken();
         modelBuilder.Entity<Person>().Property(p => p.RowVersion).IsRowVersion();
+        /*
+         Bu iki kod satırı, Entity Framework Core'da Optimistik Eşzamanlılık Kontrolü'nü (Optimistic Concurrency Control) etkinleştiren özelliklerdir.
+
+IsConcurrencyToken() yöntemi, bir özelliğin eşzamanlılık belirteci (concurrency token) olarak işaretlenmesini sağlar. Bir özelliğin eşzamanlılık belirteci olarak işaretlenmesi, bu özelliğin bir veri satırındaki diğer sütunlarla birlikte kontrol edilerek, diğer kullanıcıların aynı satıra ait verileri güncellemeden önce satırın durumu hakkında bilgi sahibi olmalarını sağlar.
+
+IsRowVersion() yöntemi ise, bir sütunun satır sürümü (row version) olarak işaretlenmesini sağlar. Satır sürümü sütunu, veritabanında satırda yapılan herhangi bir değişiklik sonrasında otomatik olarak güncellenir ve bu sayede uygulamaların her bir satırdaki son değişiklikleri takip etmesi sağlanır.
+
+Bu özellikler, aynı veri kaynağına bağlı birden fazla kullanıcının aynı veri satırını değiştirmesinin söz konusu olduğu senaryolarda çok faydalıdır. Bu sayede, eşzamanlılık hatalarından kaçınılabilir ve uygulamanın verileri güncelleme işlemleri daha doğru ve tutarlı hale getirilebilir.
+         */
     }
     readonly ILoggerFactory _loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

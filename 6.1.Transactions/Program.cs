@@ -23,6 +23,7 @@ IDbContextTransaction transaction = await context.Database.BeginTransactionAsync
 
 Person p = new() { Name = "Abuzer" };
 await context.Persons.AddAsync(p);
+
 await context.SaveChangesAsync();
 
 await transaction.CommitAsync();  //comıtlemeyınce verıler gelmez degısıklıkler kaydolmaz
