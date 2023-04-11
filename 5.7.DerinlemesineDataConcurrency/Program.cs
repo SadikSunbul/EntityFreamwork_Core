@@ -41,6 +41,9 @@ using var transaction = await context.Database.BeginTransactionAsync();
 var data = await context.Persons.FromSql($"SELECT * FROM Persons WITH (XLOCK) WHERE PersonID = 5")
     .ToListAsync();
 Console.WriteLine();
+
+//await transaction.DisposeAsync();
+
 await transaction.CommitAsync();
 
 
