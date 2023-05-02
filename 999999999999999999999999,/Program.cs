@@ -2,34 +2,56 @@
 
 
 
-
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection;
 
-class denemeContext:DbContext
+EticaretContext context = new();
 
+Console.WriteLine("Tamma");
+Console.ReadLine();
+
+class Çalışan
 {
-    StreamWriter _log = new StreamWriter("denem.txt", append: true);
-    protected override async void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-        
-        optionsBuilder.LogTo( message =>  _log.WriteLine(message),LogLevel.Information)
-            .EnableDetailedErrors();
+    public int Id { get; set; }
+    public string İsim { get; set; }
+    public string Soyisim { get; set; }
+    public int ÇalışanAddresId { get; set; }
+    public ÇalışanAdress ÇalışanAdress { get; set; }
 
+}
+
+class ÇalışanAdress
+{
+    public int Id { get; set; }
+    public string Adres { get; set; }
+    public Çalışan Çalışan { get; set; }
+}
+
+class EticaretContext:DbContext
+{
+
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(
+            "Server=localhost,1433;Database=Tets;User Id=sa ; Password=Viabelli34*.;TrustServerCertificate=true"
+            );
     }
 
-
-    public override void Dispose()
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.Dispose();
-        _log.Dispose();
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
+}
 
-    public override async ValueTask DisposeAsync()
+
+class ÇalışanConfigration : IEntityTypeConfiguration<Çalışan>
+{
+    public void Configure(EntityTypeBuilder<Çalışan> builder)
     {
-        await base.DisposeAsync();
-        await _log.DisposeAsync(); 
-    }
-
+        builder.HasOne(i => i.ÇalışanAdress)
+            .WithOne(i => i.Çalışan)
+            .HasForeignKey<Çalışan>(i=>i.ÇalışanAddresId);
+        }
 }
