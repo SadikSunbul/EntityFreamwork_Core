@@ -1,71 +1,50 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection;
 
-DenemeContext context = new DenemeContext();
 
-//Çalışan calısan1 = new()
-//{
-//    Adi = "Sadık",
-//    Departman = new Departman()
-//    {
-//        DepartmanAdi = "Backend"
-//    }
-//};
-//Çalışan calısan2 = new()
-//{
-//    Adi = "Ali",
-//    DepartmanId = 1
-//};
-
-//Çalışan calısan3 = new()
-//{
-//    Adi = "Hasan",
-//    Departman = new Departman()
-//    {
-//        DepartmanAdi = "Frontend"
-//    }
-//};
-
-//Departman departman1 = new()
-//{
-//    DepartmanAdi = "Sekreter"
-//};
-//await context.Departmanlar.AddAsync(departman1);
-//await context.Çalışanlar.AddRangeAsync(calısan1, calısan2, calısan3);
-
-var data = await context.Çalışanlar.Include(i => i.Departman).FirstOrDefaultAsync(i => i.Id == 1);
-
-Departman? departaman = await context.Departmanlar.FirstOrDefaultAsync(i => i.DepartmanAdi == "Frontend");
+DenemeContext context = new();
 
 
+x x1 = new x() { Xaçıklama = " x içerisine yazıldı" };
+y y1 = new y() { Xaçıklama = "y içerisinden yazıldı", Yaçıklama = "y içinden yazıldı" };
+z z1 = new z() { Xaçıklama = "z içerisinden yazıldı", Yaçıklama = "z içerisinden yazıldı", Zaçıklama = "z içerisinden yazıldı" };
+q q1 = new q() { Xaçıklama = "q içerisinden yazıldı", Qaçıkalam = "q içerisinden yazıldı" };
 
-data.Departman = departaman;
-
+await context.AddRangeAsync(x1, y1, z1, q1);
 await context.SaveChangesAsync();
 Console.WriteLine("Temam");
 Console.ReadLine();
 
-class Çalışan 
+
+class x
 {
     public int Id { get; set; }
-    public string Adi { get; set; }
-    public int DepartmanId { get; set; }
-    public Departman Departman { get; set; }
+    public string Xaçıklama { get; set; }
+
+
+}
+class y:x
+{
+    public string Yaçıklama { get; set; }
+}
+class z:y
+{
+    public string Zaçıklama { get; set; }
+}
+class q:x
+{
+    public string Qaçıkalam { get; set; }
+
 }
 
-class Departman
-{
-    public int Id { get; set; }
-    public string DepartmanAdi { get; set; }
-    public ICollection<Çalışan> Çalışanlar { get; set; }
-}
 
 class DenemeContext:DbContext
 {
-    public DbSet<Çalışan> Çalışanlar { get; set; }
-    public DbSet<Departman> Departmanlar { get; set; }
+    public DbSet<x> x { get; set; }
+    public DbSet<z> z { get; set; }
+    public DbSet<y> y { get; set; }
+    public DbSet<q> q { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -74,19 +53,9 @@ class DenemeContext:DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.Entity<x>().UseTpcMappingStrategy();
+
     }
 }
 
-
-class ÇalşanConfigartion : IEntityTypeConfiguration<Çalışan>
-{
-    public void Configure(EntityTypeBuilder<Çalışan> builder)
-    {
-        builder.HasOne(i => i.Departman)
-        .WithMany(i => i.Çalışanlar)
-        .HasForeignKey(i => i.DepartmanId);
-            
-    }
-}
 

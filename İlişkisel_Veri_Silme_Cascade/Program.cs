@@ -223,7 +223,7 @@ class ApplicationDbContext : DbContext
             .HasOne(p => p.Blog)
             .WithMany(b => b.Posts)
             .IsRequired(false) //burda ılgılı forenkey colonu ıllakı requert olmak zorunda degıl 
-            .OnDelete(DeleteBehavior.Restrict); //principal dan veri silindiğinde
+            .OnDelete(DeleteBehavior.SetNull); //principal dan veri silindiğinde
 
         modelBuilder.Entity<Book>()   //coka cokta belırlıyemeyız required i
             .HasMany(b => b.Authors)

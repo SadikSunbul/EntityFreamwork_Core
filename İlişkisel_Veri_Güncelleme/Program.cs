@@ -9,24 +9,24 @@ ApplicationDbContext context = new();
 
 #region One to One İlişkisel Senaryolarda Veri Güncelleme
 #region Saving
-//burada verı ekledık 
-//Person person = new()
-//{
-//    Name = "Gençay",
-//    Address = new()
-//    {
-//        PersonAddress = "Yenimahalle/ANKARA"
-//    }
-//};
+burada verı ekledık 
+Person person = new()
+                {
+                    Name = "Sadık",
+                    Address = new()
+                    {
+                        PersonAddress = "Yenimahalle/ANKARA"
+                    }
+                };
 
-//Person person2 = new()
-//{
-//    Name = "Hilmi"
-//};
+Person person2 = new()
+{
+    Name = "Hilmi"
+};
 
-//await context.AddAsync(person);
-//await context.AddAsync(person2);
-//await context.SaveChangesAsync();
+await context.AddAsync(person);
+await context.AddAsync(person2);
+await context.SaveChangesAsync();
 #endregion
 
 #region 1. Durum | Esas tablodaki veriye bağımlı veriyi değiştirme
