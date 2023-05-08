@@ -7,6 +7,15 @@ using System.Reflection.Emit;
 
 ApplicationDbContext context = new();
 
+/*
+ * FromSqlInterpolated ve FromSql metotları, Entity Framework Core'da bir SQL sorgusu çalıştırmak için kullanılır.
+
+FromSqlInterpolated, tamsayı biçimlendirmesi (interpolation) yaparak parametreleri doğrudan SQL sorgusuna yerleştirir. Bu nedenle, bu yöntem, güvenli bir şekilde SQL enjeksiyon saldırılarından korunmak için kullanılabilir.
+
+Öte yandan, FromSql metodu, parametreleri ayrı olarak vermenizi gerektirir. Bu nedenle, SQL enjeksiyonu riski daha yüksektir. Ancak, FromSql yöntemi, bir dize ve parametrelerin ayırt edilmesini sağlar, böylece parametrelerinizi daha okunaklı hale getirebilirsiniz.
+
+Kullanım durumunuza bağlı olarak, FromSqlInterpolated veya FromSql yöntemini tercih edebilirsiniz. Ancak her zaman mümkün olan durumlarda, FromSqlInterpolated kullanarak SQL enjeksiyon saldırılarından korunmanız önerilir.
+ */
 //Eğer ki, sorgunuzu LINQ ile ifade edemiyorsanız yahut lINQ'in ürettiği sorguya nazaran daha optimize bir sorguyu manuel geliştirmek ve EF Core üzerinden execute etmek istiyorsanız EF Core'un bu davrnaışı desteklediğini bilmelisiniz.
 
 //Manuel bir şekilde/tarafımızca oluşturulmuş olan sorguları EF Core tarafından execute edebilmek için o sorgunun sonucunu karşılayacak bir entity model'ın tasarlanmış ve bunun DbSet olarak context nesnesine tanımlanmış olması gerekiyor.

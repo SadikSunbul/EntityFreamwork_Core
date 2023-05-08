@@ -61,6 +61,8 @@ DenemeContext context = new();
 var query = from Anne in context.Anneler
             join Çocuk in context.Çocuklar
               on Anne.Id equals Çocuk.AnneId
+              into annecocuk 
+              from Çocuk in annecocuk.DefaultIfEmpty()
             select new
             {
                 Anne,
