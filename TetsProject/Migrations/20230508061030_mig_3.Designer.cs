@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TetsProject.Migrations
 {
     [DbContext(typeof(DenemeContext))]
-    partial class DenemeContextModelSnapshot : ModelSnapshot
+    [Migration("20230508061030_mig_3")]
+    partial class mig_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +42,7 @@ namespace TetsProject.Migrations
                         .HasDefaultValueSql("NEXT VALUE FOR ec_sec");
 
                     b.Property<string>("İsim")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -76,15 +80,16 @@ namespace TetsProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AnneId")
+                    b.Property<int>("CocukId")
                         .HasColumnType("int");
 
                     b.Property<string>("İsim")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnneId");
+                    b.HasIndex("CocukId");
 
                     b.ToTable("Çocuklar");
                 });
@@ -126,7 +131,7 @@ namespace TetsProject.Migrations
                 {
                     b.HasOne("Anne", "Anne")
                         .WithMany("Çocuklar")
-                        .HasForeignKey("AnneId")
+                        .HasForeignKey("CocukId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -123,25 +123,25 @@ class ApplicationDbContext : DbContext
     public DbSet<Post> Posts { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //modelBuilder.Entity<Blog>()
-        //    .HasKey(b => b.Id)
-        //    .HasName("ornek");
-        //modelBuilder.Entity<Blog>()
-        //    .HasAlternateKey(b => new { b.Url, b.BlogName });
-        //modelBuilder.Entity<Blog>()
-        //    .Property<int>("BlogForeignKeyId");
+        modelBuilder.Entity<Blog>()
+            .HasKey(b => b.Id)
+            .HasName("ornek");
+        modelBuilder.Entity<Blog>()
+            .HasAlternateKey(b => new { b.Url, b.BlogName });
+        modelBuilder.Entity<Blog>()
+            .Property<int>("BlogForeignKeyId");
 
-        //modelBuilder.Entity<Blog>()
-        //    .HasMany(b => b.Posts)
-        //    .WithOne(b => b.Blog)
-        //    .HasForeignKey("BlogForeignKeyId")
-        //    .HasConstraintName("ornekforeignkey");
+        modelBuilder.Entity<Blog>()
+            .HasMany(b => b.Posts)
+            .WithOne(b => b.Blog)
+            .HasForeignKey("BlogForeignKeyId")
+            .HasConstraintName("ornekforeignkey");
 
-        //modelBuilder.Entity<Blog>()
-        //    .HasIndex(b => b.Url)
-        //    .IsUnique();             //burad Eşsiz yaptık altakı HasAlternateKey de aynı sekılde Eşsiz yapar
-        //modelBuilder.Entity<Blog>()
-        //    .HasAlternateKey(b => b.Url);
+        modelBuilder.Entity<Blog>()
+            .HasIndex(b => b.Url)
+            .IsUnique();             //burad Eşsiz yaptık altakı HasAlternateKey de aynı sekılde Eşsiz yapar
+        modelBuilder.Entity<Blog>()
+            .HasAlternateKey(b => b.Url);
 
         modelBuilder.Entity<Post>()
             .HasCheckConstraint("a_b_check_const", "[A] > [B]");   //a b den buyukse kayıtları kabul et  

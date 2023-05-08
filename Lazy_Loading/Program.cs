@@ -8,6 +8,13 @@ using System.Runtime.CompilerServices;
 
 ApplicationDbContext context = new();
 
+// BURAA 4 OENMLI HUSUS VAR
+/*
+    1->Microsoft.EntityFrameworkCore.Proxies  İNDİR
+    2-> OnConfiguring .UseLazyLoadingProxies() ekle
+    3-> baglantı yerlerındekı propertylerı vırtual olarak ısaretle
+    4-> clasların public olmasına dikkat et
+ */
 #region Lazy Loading Nedir?
 //Navigation property'ler üzerinde bir işlem yapılmaya çalışıldığı taktirde ilgili propertynin/ye temsil ettiği/karşılık gelen tabloya özel bir sorgu oluşturulup execute edilmesini ve verilerin yüklenmesini sağlayan bir yaklaşımdır.
 #endregion

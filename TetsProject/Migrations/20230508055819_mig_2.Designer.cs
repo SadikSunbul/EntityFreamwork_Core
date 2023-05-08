@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TetsProject.Migrations
 {
     [DbContext(typeof(DenemeContext))]
-    partial class DenemeContextModelSnapshot : ModelSnapshot
+    [Migration("20230508055819_mig_2")]
+    partial class mig_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,9 +22,6 @@ namespace TetsProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.HasSequence("ec_sec")
-                .StartsAt(990L);
 
             modelBuilder.HasSequence("xSequence");
 
@@ -33,17 +33,11 @@ namespace TetsProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Rastgelesayi")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValueSql("NEXT VALUE FOR ec_sec");
-
                     b.Property<string>("İsim")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("İsim");
 
                     b.ToTable("Anneler");
                 });
@@ -76,15 +70,16 @@ namespace TetsProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AnneId")
+                    b.Property<int>("CocukId")
                         .HasColumnType("int");
 
                     b.Property<string>("İsim")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnneId");
+                    b.HasIndex("CocukId");
 
                     b.ToTable("Çocuklar");
                 });
@@ -126,7 +121,7 @@ namespace TetsProject.Migrations
                 {
                     b.HasOne("Anne", "Anne")
                         .WithMany("Çocuklar")
-                        .HasForeignKey("AnneId")
+                        .HasForeignKey("CocukId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
