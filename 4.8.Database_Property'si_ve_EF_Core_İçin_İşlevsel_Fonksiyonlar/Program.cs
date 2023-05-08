@@ -19,19 +19,22 @@ ApplicationDbContext context = new();
  Arayüz IDbContextTransaction, Entity Framework Core tarafından yönetilen bir işlemi temsil eder. İşlem içinde yapılan değişiklikleri taahhüt etmek veya geri almak gibi işlemi kontrol etmek için yöntemler sağlar.
  */
 /*
+ Örneğin, bir banka uygulamasında para transferi işlemi yaparken, gönderen hesaptan para çıkışı yapılacak ve aynı zamanda alıcı hesaba para yatırılacaktır. İşlem başlatıldığında, bu iki değişiklik tek bir işlem olarak ele alınabilir ve başarısızlık durumunda her ikisi de geri alınabilir. BeginTransaction yöntemi, bu tür işlemleri yönetmek için oldukça faydalıdır.
+ */
+/*
  using var transaction = context.Database.BeginTransaction();
 
 try
 {
     // Perform database operations here...
 
-    context.SaveChanges();
+    context.SaveChanges(); //verıler kaydedılırken hata varmı yokmu onu kontrol eder
 
-    transaction.Commit();
+    transaction.Commit(); //Ancak eğer hatalar oluşmadan işlem tamamlanırsa, commit() yöntemi çağrılır ve işlem sonlandırılır:
 }
 catch (Exception)
 {
-    transaction.Rollback();
+    transaction.Rollback(); //Eğer herhangi bir hata meydana gelirse, önceki tüm değişiklikler geri alınır ve işlem iptal edilir:
 }
  */
 /*
@@ -73,6 +76,9 @@ catch (Exception)
 //Context nesnesinde yapılmış olan veritabanı tasarımı her ne ise ona uygun bir SQL Script'ini string olarak veren metottur.
 //var script = context.Database.GenerateCreateScript();
 //Console.WriteLine(script);
+/*
+ GenerateCreateScript()yöntemi, bir SQL Server veritabanı nesnesinin (tablo, saklama prosedürü, vb.) CREATE script'ini oluşturmak için kullanılır. Bu yöntem, SQL Server Management Studio gibi araçlarda olduğu gibi, veritabanındaki bir nesnenin kodunu almanızı sağlar.
+ */
 #endregion
 #region ExecuteSql
 //Veritabanına yapılacak Insert, Update ve Delete sorgularını yazdığımız bir metottur. Bu metot işlevsel olarak alacağı parametreleri SQL Injection saldırılarına karşı korumaktadır. 
