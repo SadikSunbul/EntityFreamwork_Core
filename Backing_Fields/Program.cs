@@ -104,12 +104,12 @@ class BackingFieldDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        /*
+       
         modelBuilder.Entity<Person>()
             .Property(p => p.Name) //name propertysı 
             .HasField(nameof(Person.name))
             .UsePropertyAccessMode(PropertyAccessMode.Field);
-        */
+        
 
         modelBuilder.Entity<Person>()
             .Property(nameof(Person.name)); //bunu yazınca Name propertysıne karsılık gelıcektır 

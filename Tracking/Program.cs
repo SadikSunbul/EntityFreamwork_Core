@@ -78,7 +78,7 @@ public class ETicaretContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Ekişi;User Id=sa ; Password=sıfre;TrustServerCertificate=true");
-        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); //conteten gelen tum datalar artık  takıpedılmıycektır ve  burada degıstırmek ıstedıgımız durumlarda ANoTracking kullnamız gerekır
+        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); //conteten gelen tum datalar artık  takıpedılmıycektır ve  burada degıstırmek ıstedıgımız durumlarda AsNoTracking kullnamız gerekır
     }
 }
 public class Kullanici

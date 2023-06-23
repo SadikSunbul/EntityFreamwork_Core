@@ -243,14 +243,14 @@ class ApplicationDbContext : DbContext
         #region GetEntityTypes
         //mıgratıons olusturulurken ekrana yazar bunları 
         //aktıf bı sekılde kullanamyız burayı genelde
-        //var entities = modelBuilder.Model.GetEntityTypes();
-        //foreach (var entity in entities)
-        //{
-        //    Console.WriteLine(entity.Name);
-        //}
+        var entities = modelBuilder.Model.GetEntityTypes();
+        foreach (var entity in entities)
+        {
+            Console.WriteLine(entity.Name);
+        }
         #endregion
         #region ToTable
-        //modelBuilder.Entity<Person>().ToTable("tablonunadı");
+        modelBuilder.Entity<Person>().ToTable("tablonunadı");
         #endregion
         #region Column
         //modelBuilder.Entity<Person>()
@@ -267,14 +267,14 @@ class ApplicationDbContext : DbContext
         //    .HasForeignKey(p => p.DId);
         #endregion
         #region Ignore
-        //modelBuilder.Entity<Person>()
-        //    .Ignore(p => p.Laylaylom);
+        modelBuilder.Entity<Person>()
+            .Ignore(p => p.Laylaylom);
 
 
         #endregion
         #region Primary Key --> HasKey
-        //modelBuilder.Entity<Person>()
-        //    .HasKey(p => p.Id);
+        modelBuilder.Entity<Person>()
+            .HasKey(p => p.Id);
         #endregion
         #region IsRowVersion
         //modelBuilder.Entity<Person>()
@@ -284,13 +284,13 @@ class ApplicationDbContext : DbContext
         #endregion
         #region IsRequired
         //not null --> bos gecılemz dedık
-        //modelBuilder.Entity<Person>()
-        //    .Property(p => p.Surname).IsRequired();
+        modelBuilder.Entity<Person>()
+            .Property(p => p.Surname).IsRequired();
         #endregion
         #region HasMaxLength
-        //modelBuilder.Entity<Person>()
-        //    .Property(p => p.Surname)
-        //    .HasMaxLength(13);
+        modelBuilder.Entity<Person>()
+            .Property(p => p.Surname)
+            .HasMaxLength(13);
         #endregion
         #region HasPrecision
         //modelBuilder.Entity<Person>()

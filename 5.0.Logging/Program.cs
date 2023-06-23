@@ -20,7 +20,17 @@ var datas = await context.Persons.ToListAsync();
 #region Basit Olarak Loglama Nasıl Yapılır?
 //Minumum yapılandırma gerektirmesi.
 //Herhangi bir nuget paketine ihtiyaç duyulmaksızın loglamanın yapılabilmesi.
+/*
+ En çok kullanılan log kaydı tutma sistemleri arasında NLog, Log4Net ve Serilog yer almaktadır. Bu sistemler geniş bir kullanıcı kitlesi tarafından benimsenmiş ve aktif olarak geliştirilmektedir.
 
+NLog, .NET Framework ve .NET Core uygulamaları için açık kaynak kodlu bir loglama kütüphanesidir. Basit yapılandırma dosyalarıyla kolayca yapılandırılabilir ve esnek bir şekilde özelleştirilebilir.
+
+Log4Net de açık kaynaklı bir log kaydı tutma sistemi olup, NLog gibi basit yapılandırma dosyaları kullanarak yapılandırılabilir ve özelleştirilebilir.
+
+Serilog, .NET uygulamaları için açık kaynaklı bir loglama kütüphanesidir. NLog ve Log4Net'den farklı olarak, kod ve yapılandırma dosyaları arasında daha az ayrım yapar ve üzerinde çalışmanın daha kolay olduğu bir API sağlar.
+
+Ancak en çok kullanılan loglama sistemi her zaman ihtiyaca bağlı olarak değişebilir. Projenin gereksinimlerine ve tercihlerinize bağlı olarak, farklı loglama sistemleri sizin için daha uygun olabilir.
+ */
 #region Debug Penceresine Log Nasıl Atılır?
 
 #endregion
